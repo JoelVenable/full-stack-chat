@@ -1,0 +1,25 @@
+{
+  "plugins": [
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-nullish-coalescing-operator"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "transform-imports",
+          {
+            "@material-ui/core": {
+              "transform": "@material-ui/core/esm/${member}",
+              "preventFullImport": true
+            },
+            "@material-ui/icons": {
+              "transform": "@material-ui/icons/esm/${member}",
+              "preventFullImport": true
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

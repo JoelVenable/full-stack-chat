@@ -1,0 +1,24 @@
+overwrite: true
+schema:
+  - ${REACT_APP_GRAPHQL_URI}:
+      headers:
+        x-api-key: ${REACT_APP_GRAPHQL_API_KEY}
+  - src/client-state-schema.graphql
+documents: 'src/**/*.graphql'
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - typescript
+      - typescript-resolvers
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      contextType: ../components/ApolloClient/context#ApolloResolverContext
+      useIndexSignature: true
+      skipTypename: true
+      withComponent: false
+      withHOC: false
+      withHooks: true
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
