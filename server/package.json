@@ -1,0 +1,15 @@
+{
+  "name": "full-stack-chat",
+  "version": "1.0.0",
+  "description": "This chat application is a learning project to explore Apollo server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-lambda": "^2.9.14",
+    "graphql": "^14.5.8"
+  }
+}
